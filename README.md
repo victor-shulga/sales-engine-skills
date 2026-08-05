@@ -1,6 +1,6 @@
 # sales-engine
 
-Sales execution skills for B2B service companies: discovery prep, call scripts, meeting-intent scoring, value propositions, pipeline analysis.
+Sales execution skills for B2B service companies: discovery prep, call scripts, value propositions, pipeline analysis.
 
 Part of the GTM-system methodology by [Victor Shulga](https://victorshulga.com) (Fractional CRO).
 
@@ -15,7 +15,6 @@ Restart your Claude Code session after install — skills load at session start.
 
 ## Skills included
 
-- `28-meeting-intent-scorer`
 - `cold-call-script`
 - `meeting-prep`
 - `pipeline-analysis`
@@ -31,6 +30,15 @@ Restart your Claude Code session after install — skills load at session start.
 | CRM MCP | pulling deals/accounts | optional | connect your CRM |
 
 Skills degrade gracefully: without MCP connections they work from pasted data (CSV, sheets, text).
+
+## Changelog
+
+**0.2.0** — `28-meeting-intent-scorer` removed. Scoring a reply for meeting intent is one step of
+answering that reply, not a separate job: it has been folded into `reply-objection-handler` in the
+[outbound-engine](https://github.com/victor-shulga/outbound-engine-skills) bundle, which triages the
+reply for intent and speed and then writes the actual response. Numeric prefixes dropped throughout.
+
+**0.1.0** — initial bundle.
 
 ## License
 

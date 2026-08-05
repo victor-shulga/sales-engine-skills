@@ -1,7 +1,7 @@
 {
   "name": "sales-engine-skills",
   "metadata": {
-    "description": "Sales execution skills for B2B service companies: discovery prep, call scripts, meeting-intent scoring, value propositions, pipeline analysis."
+    "description": "Sales execution skills for B2B service companies: discovery prep, call scripts, value propositions, pipeline analysis."
   },
   "owner": {
     "name": "Victor Shulga",
@@ -11,8 +11,8 @@
     {
       "name": "sales-engine",
       "source": "./",
-      "description": "5 Claude Code skills that execute the sales block of a GTM system for B2B service companies: pre-call meeting prep (≤500-word briefs), cold-call scripts, meeting-intent scoring (is this meeting worth prepping), value proposition listing, and pipeline analysis with actionable follow-ups. Built and battle-tested by Victor Shulga (Fractional CRO).",
-      "version": "0.1.0",
+      "description": "4 Claude Code skills that execute the sales block of a GTM system for B2B service companies: pre-call meeting prep (≤500-word briefs), cold-call scripts, value proposition listing, and pipeline analysis with actionable follow-ups. Built and battle-tested by Victor Shulga (Fractional CRO).",
+      "version": "0.2.0",
       "keywords": [
         "sales",
         "discovery",
