@@ -1,7 +1,7 @@
 {
   "name": "sales-engine",
-  "version": "0.2.0",
-  "description": "4 Claude Code skills that execute the sales block of a GTM system for B2B service companies: pre-call meeting prep (≤500-word briefs), cold-call scripts, value proposition listing, and pipeline analysis with actionable follow-ups. Built and battle-tested by Victor Shulga (Fractional CRO).",
+  "version": "0.3.0",
+  "description": "6 Claude Code skills that execute the sales block of a GTM system for B2B service companies: pre-call meeting prep (≤500-word briefs), cold-call scripts, value proposition listing, an offer ladder, branded proposals (call deck + send version) and pipeline analysis with actionable follow-ups. Built and battle-tested by Victor Shulga (Fractional CRO).",
   "author": {
     "name": "Victor Shulga",
     "url": "https://github.com/victor-shulga"

@@ -1,6 +1,6 @@
 # sales-engine
 
-Sales execution skills for B2B service companies: discovery prep, call scripts, value propositions, pipeline analysis.
+Sales execution skills for B2B service companies: discovery prep, call scripts, value propositions, pipeline analysis, an offer ladder and the proposal that closes — the draft → brief → proposal chain in one pack.
 
 Part of the GTM-system methodology by [Victor Shulga](https://victorshulga.com) (Fractional CRO).
 
@@ -15,10 +15,14 @@ Restart your Claude Code session after install — skills load at session start.
 
 ## Skills included
 
-- `cold-call-script`
-- `meeting-prep`
-- `pipeline-analysis`
-- `value-prop-lister`
+**From first call to proposal**
+
+- `meeting-prep` — a ≤500-word brief before the call
+- `cold-call-script` — the script for the call itself
+- `value-prop-lister` — the value propositions the offer is built from
+- `offer-ladder` — free → low → mid → high tiers around one core transformation, grounded in real services and cases
+- `proposal-generator` — two proposals on the client's brand: a call deck and a send version, plus a critique of the quotes they send today
+- `pipeline-analysis` — where deals stall and the follow-ups that move them
 
 ## Requirements & integrations
 
@@ -32,6 +36,10 @@ Restart your Claude Code session after install — skills load at session start.
 Skills degrade gracefully: without MCP connections they work from pasted data (CSV, sheets, text).
 
 ## Changelog
+
+**0.3.0** — the sales block now ends in a proposal. `proposal-generator` moved here from
+[gtm-skills](https://github.com/victor-shulga/gtm-skills) (one home per skill, as before) and
+`offer-ladder` was added, so draft → brief → offer → proposal lives in one pack.
 
 **0.2.0** — `28-meeting-intent-scorer` removed. Scoring a reply for meeting intent is one step of
 answering that reply, not a separate job: it has been folded into `reply-objection-handler` in the
