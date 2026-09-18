@@ -1,6 +1,7 @@
 ---
 name: offer-ladder
-description: Use when the user wants to build a vertical OFFER LADDER (value/ascension ladder) for an IT-agency client from their website — free → low → mid → high tiers around ONE core transformation, grounded in the agency's real services and case studies. Trigger when the user says "сходи оферів", "побудуй драбину оферів", "offer ladder", "value ladder for [client]", "ascension ladder", "розклади офери по тірах", or pastes an agency URL and asks how to structure their portfolio / monetization. NOT for generating parallel offer-bets to A/B test in cold outbound — that is the offer-factory skill. Ladder = vertical portfolio architecture; offer-factory = horizontal test batch. They compose: ladder gives structure, offer-factory tests the entry rungs.
+description: >
+  Use when the user wants to build a vertical OFFER LADDER (value/ascension ladder) for an IT-agency client from their website — free → low → mid → high tiers around ONE core transformation, grounded in the agency's real services and case studies. Trigger when the user says "сходи оферів", "побудуй драбину оферів", "offer ladder", "value ladder for [client]", "ascension ladder", "розклади офери по тірах", or pastes an agency URL and asks how to structure their portfolio / monetization. NOT for generating parallel offer-bets to A/B test in cold outbound — that is the offer-factory skill. Ladder = vertical portfolio architecture; offer-factory = horizontal test batch. They compose: ladder gives structure, offer-factory tests the entry rungs.
 ---
 
 # Offer Ladder
