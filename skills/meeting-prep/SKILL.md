@@ -1,19 +1,16 @@
 ---
 name: meeting-prep
-description: >
-  Generates a pre-call brief for a BOOKED meeting (discovery or demo) — the handoff dossier that lets
-  whoever takes the call walk in fully prepared. Entire brief ≤ 500 words. Built from the G6 handoff
-  context (thread + signal + hypothesis), the prospect-profiler card, and any scoring/profile data.
-  Produces: exec summary, company snapshot, prospect profile, conversation starters, no-BANT discovery
-  questions, grounded objection-handles, time-blocked agenda (30/60 min), success metrics. Adapted for
-  B2B service agencies (e.g. BIM/MEP, GIS, custom dev, AI/SaaS
-  engineering outsourcing), NOT US-SaaS. Use when the user says: "підготуй до зустрічі", "pre-call brief",
-  "бриф на дзвінок", "meeting prep", "prep me for [meeting]", "дос'є на зустріч", "handoff brief",
-  or hands a booked discovery/demo and wants prep. This is the G6 HANDOFF artifact in the Outreach QA
-  Framework (the user's team preps it, client sales runs the call). NOT a cold-call script (use cold-call-script for
-  outbound dials), NOT meeting-intent scoring (use 28-meeting-intent-scorer to decide if the meeting is
-  worth prepping), NOT deep customer research (use deep-company-analyser for a T1 that needs more).
----
+description: >-
+  Generates a pre-call brief for a BOOKED meeting (discovery or demo): the handoff dossier that lets
+  whoever takes the call walk in prepared, 500 words max. Built from the handoff context (thread +
+  signal + hypothesis), the prospect-profiler card and any scoring data. Produces exec summary,
+  company snapshot, prospect profile, conversation starters, no-BANT discovery questions, grounded
+  objection handles, time-blocked agenda (30/60 min) and success metrics. Adapted for B2B service
+  agencies (BIM/MEP, GIS, custom dev, AI/SaaS engineering outsourcing), NOT US-SaaS. Use when asked:
+  "підготуй до зустрічі", "pre-call brief", "бриф на дзвінок", "meeting prep", "prep me for
+  [meeting]", "дос'є на зустріч", "handoff brief", or when handed a booked call. NOT a cold-call
+  script (cold-call-script), NOT meeting-intent scoring (meeting-intent-scorer), NOT deep customer
+  research (account-dossier).---
 
 # Meeting Prep — the pre-call brief (≤ 500 words)
 
