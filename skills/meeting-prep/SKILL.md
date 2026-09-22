@@ -10,7 +10,8 @@ description: >-
   "підготуй до зустрічі", "pre-call brief", "бриф на дзвінок", "meeting prep", "prep me for
   [meeting]", "дос'є на зустріч", "handoff brief", or when handed a booked call. NOT a cold-call
   script (cold-call-script), NOT meeting-intent scoring (meeting-intent-scorer), NOT deep customer
-  research (account-dossier).---
+  research (account-dossier).
+---
 
 # Meeting Prep — the pre-call brief (≤ 500 words)
 
