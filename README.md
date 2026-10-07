@@ -24,6 +24,12 @@ Restart your Claude Code session after install — skills load at session start.
 - `proposal-generator` — two proposals on the client's brand: a call deck and a send version, plus a critique of the quotes they send today
 - `pipeline-analysis` — where deals stall and the follow-ups that move them
 
+**Qualification, process, decks**
+
+- `scope-qualifier` — qualify a deal on SCOPE (Signal, Capability gap, Outcome at stake, Players and path, Engagement fit): verdict, CRM fields, what to find out next; maps onto MEDDPICC or BANT
+- `delivery-process-builder` — the buyer-facing delivery process from a founder interview: what the buyer gets week by week, exit points, their inputs, risk handling, then a site page, a call-deck slide and a proposal block
+- `slide-deck-builder` — a source document or notes turned into a .pptx deck (pitch, QBR or board, case study, onboarding) with an approved outline and a render check
+
 ## Requirements & integrations
 
 | Integration | Used for | Required? | Auth / setup |
@@ -36,6 +42,8 @@ Restart your Claude Code session after install — skills load at session start.
 Skills degrade gracefully: without MCP connections they work from pasted data (CSV, sheets, text).
 
 ## Changelog
+
+**0.4.0** — `scope-qualifier`, `delivery-process-builder` and `slide-deck-builder` added (9 skills). `meeting-prep` now points to the intent triage in `reply-objection-handler`.
 
 **0.3.0** — the sales block now ends in a proposal. `proposal-generator` moved here from
 [gtm-skills](https://github.com/victor-shulga/gtm-skills) (one home per skill, as before) and

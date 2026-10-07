@@ -9,7 +9,7 @@ description: >-
   agencies (BIM/MEP, GIS, custom dev, AI/SaaS engineering outsourcing), NOT US-SaaS. Use when asked:
   "підготуй до зустрічі", "pre-call brief", "бриф на дзвінок", "meeting prep", "prep me for
   [meeting]", "дос'є на зустріч", "handoff brief", or when handed a booked call. NOT a cold-call
-  script (cold-call-script), NOT meeting-intent scoring (meeting-intent-scorer), NOT deep customer
+  script (cold-call-script), NOT meeting-intent scoring (reply-objection-handler), NOT deep customer
   research (account-dossier).
 ---
 
@@ -21,7 +21,7 @@ landmines.
 
 **Where this sits.** This is the **G6 handoff artifact** in the Outreach QA Framework. the user's team
 prepared the lead; the brief travels with the lead to the client's sales team so they don't start from
-zero on a warm lead (the most expensive place to lose one). Run `28-meeting-intent-scorer` FIRST — only
+zero on a warm lead (the most expensive place to lose one). Run the intent triage in `reply-objection-handler` (outbound-engine-skills) FIRST — only
 prep meetings that clear the qualification threshold.
 
 **Grounding rule (don't fabricate the call).** Every objection, pain, and starter ties to a real
@@ -85,7 +85,7 @@ objection handling · 55-60 next steps+actions.
 ## Integration
 
 ```
-G6 Reply QA: positive reply → 28-meeting-intent-scorer (worth it?) → meeting booked
+G6 Reply QA: positive reply → reply-objection-handler triage (worth it?) → meeting booked
                                           │
                                           ▼
                               meeting-prep  ← THIS skill: handoff dossier
@@ -94,7 +94,7 @@ G6 Reply QA: positive reply → 28-meeting-intent-scorer (worth it?) → meeting
                         client sales runs the call (brief travels with the lead)
 ```
 
-- **Score first:** `28-meeting-intent-scorer` — don't prep meetings below threshold.
+- **Score first:** intent triage in `reply-objection-handler` — don't prep meetings below threshold.
 - **Build on:** `prospect-profiler` card (don't re-derive); `deep-company-analyser` for a T1 that needs depth.
 - **Objection plays:** `reply-objection-handler`. **Discovery construction:** `cold-call-script`.
 
@@ -102,6 +102,6 @@ G6 Reply QA: positive reply → 28-meeting-intent-scorer (worth it?) → meeting
 1. ≤ 500 words total. A rep skims it in 2 minutes.
 2. NO BANT questions — consequence/impact instead.
 3. No fabricated objections — ground each or tag `[inferred]`.
-4. Score with `28-meeting-intent-scorer` before prepping.
+4. Triage intent with `reply-objection-handler` before prepping.
 5. One outcome goal per brief — state it in `exec_summary`.
 6. Spoken fields in the prospect's language; framing in UA.
