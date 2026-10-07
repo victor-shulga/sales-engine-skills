@@ -1,6 +1,6 @@
 {
   "name": "sales-engine",
-  "version": "0.4.0",
+  "version": "0.4.1",
   "description": "9 Claude Code skills that execute the sales block of a GTM system for B2B service companies: pre-call meeting prep (≤500-word briefs), cold-call scripts, value proposition listing, an offer ladder, branded proposals (call deck + send version) pipeline analysis with actionable follow-ups, deal qualification (SCOPE, mappable to MEDDPICC/BANT), the buyer-facing delivery process (how we work), and a slide deck builder (.pptx from a document). Built and battle-tested by Victor Shulga (Fractional CRO).",
   "author": {
     "name": "Victor Shulga",

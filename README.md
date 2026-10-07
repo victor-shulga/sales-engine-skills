@@ -43,6 +43,8 @@ Skills degrade gracefully: without MCP connections they work from pasted data (C
 
 ## Changelog
 
+**0.4.1** — `cold-call-script`, `value-prop-lister` and `pipeline-analysis` rewritten for service companies: the call script now opens on a real reason and a guess about the buyer's situation, the value-prop inventory grades every claim by proof and by how many competitors say the same, and the pipeline review puts project and retainer deals on one scale and flags proposal silence and the contract stage.
+
 **0.4.0** — `scope-qualifier`, `delivery-process-builder` and `slide-deck-builder` added (9 skills). `meeting-prep` now points to the intent triage in `reply-objection-handler`.
 
 **0.3.0** — the sales block now ends in a proposal. `proposal-generator` moved here from

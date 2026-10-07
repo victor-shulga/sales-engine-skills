@@ -1,256 +1,179 @@
 ---
 name: pipeline-analysis
-description: >
-  Runs a full sales pipeline analysis and renders an interactive visual dashboard.
-  Use this skill whenever the user shares deal data (CSV, HubSpot, Salesforce) and wants
-  to analyze their pipeline — even if they just say "analyze my pipeline", "how's my pipeline
-  looking", "show me my deals", "forecast this month", or "who's my top rep".
-  Covers pipeline value, stage conversion, stuck deals, forecast, rep performance,
-  and sales velocity. Always produces an interactive visual artifact as output.
+description: >-
+  Reviews the deal pipeline of a B2B service company (dev or IT outsourcing, agency, AEC/BIM
+  outsourcing, consultancy) and builds a single-file HTML dashboard from the real deal data.
+  Handles project, retainer and dedicated-team deals on one value scale, checks data hygiene,
+  finds where deals stall (proposal sent with no answer, procurement and contract, deals with
+  one contact), calculates win rate, cycle length and coverage from the company's own closed
+  deals, splits the forecast into commit, best case and pipeline, compares owners, and ends
+  with up to 8 named actions. Input: a CRM export (CSV or sheet) or a connected CRM. Use when
+  the user says "analyze my pipeline", "pipeline review", "forecast this month", "where are
+  deals stuck", "which deals will close", "who is my top rep", "розбери пайплайн",
+  "що з угодами", "прогноз на місяць", "де застрягають угоди". NOT deal qualification of one
+  deal (scope-qualifier), NOT outreach campaign stats (outbound reporting skills).
 ---
 
-# Pipeline Analysis
+# Pipeline analysis for service companies
 
-You are an expert sales analyst. The user will provide deal data via CSV, HubSpot MCP,
-or Salesforce MCP. Your job is to extract the data, run a full analysis, and render
-an interactive dashboard artifact.
+A service pipeline breaks in places a SaaS pipeline does not. Deals are bigger and fewer, so
+one slipped deal moves the month. The proposal stage is long and quiet. Procurement, an MSA
+and a security questionnaire can add six weeks after a verbal yes. And a retainer worth
+8,000 a month sits in the CRM next to a fixed-price project worth 60,000 as if the two
+numbers meant the same thing.
 
-Always respond in the user's language.
-
----
-
-## Phase 1 — Data Ingestion
-
-### Source A — CSV
-The user pastes or uploads a CSV. Expected columns (flexible naming, normalize on ingest):
-- Deal name → `name`
-- Stage → `stage`
-- Amount / ARR → `amount` (numeric, strip currency symbols)
-- Close date → `close_date` (parse to ISO date)
-- Owner / Rep → `owner`
-- Created date → `created_date` (parse to ISO date)
-- Company / Account → `company`
-- Probability → `probability` (optional, numeric 0-100)
-
-If column names differ, infer from context. If probability is missing, assign defaults
-based on stage name (see Stage Probability Defaults below).
-
-### Source B — HubSpot MCP
-Use the HubSpot MCP to fetch open deals:
-- Fetch deals with properties: `dealname`, `dealstage`, `amount`, `closedate`,
-  `hubspot_owner_id`, `createdate`, `hs_probability`, `associated_company`
-- Resolve owner IDs to names via the owners endpoint
-- Filter: only fetch deals where `pipeline = default` (or ask user which pipeline)
-- Normalize to the standard schema above
-
-### Source C — Salesforce MCP
-Use the Salesforce MCP to query opportunities:
-```sql
-SELECT Name, StageName, Amount, CloseDate, Owner.Name, CreatedDate,
-       Probability, Account.Name
-FROM Opportunity
-WHERE IsClosed = false
-```
-Normalize to the standard schema above.
-
-### Stage Probability Defaults
-If probability is not provided, use these defaults. Adapt if the user's stages differ:
-```
-Prospecting / Discovery    → 10%
-Qualification              → 20%
-Demo / Meeting scheduled   → 30%
-Proposal sent              → 50%
-Negotiation                → 70%
-Contract sent              → 85%
-Closed Won                 → 100%
-Closed Lost                → 0%
-```
+This skill puts the deals on one scale, shows where they stall, and names who should do what
+this week. Answer in the user's language. Never show a number the data does not support; an
+assumption is labelled as one.
 
 ---
 
-## Phase 2 — Data Validation
+## 1. Load the data
 
-Before analysis, flag any data quality issues inline (don't block the analysis):
-- Deals with no amount → flag as "amount missing", exclude from value calculations
-- Deals with close date in the past and still open → flag as "overdue"
-- Deals with no owner → group under "Unassigned"
-- Negative amounts → flag and exclude
-- Duplicate deal names → flag, keep both
+**From a file or sheet.** Map whatever columns exist to this schema and show the user the
+mapping in one table before going further:
 
-Report flagged records as a small warning section at the top of the dashboard.
+| Field | Meaning | Required |
+|---|---|---|
+| `deal` | deal name | yes |
+| `account` | company | yes |
+| `stage` | current stage | yes |
+| `value` | total contract value | yes, or derived |
+| `model` | project / retainer / team | if available |
+| `monthly` and `months` | for retainers and teams | if `value` is empty |
+| `owner` | who runs the deal | yes |
+| `created` | date the deal was opened | for cycle length |
+| `close` | expected close date | for the forecast |
+| `last_activity` | last call, email or meeting | for stall checks |
+| `stage_entered` | date it moved into the current stage | for stall checks |
+| `contacts` | number of people engaged on the buyer side | if available |
+| `lost_reason` | for closed-lost | if available |
 
----
+**From a connected CRM.** Pull open deals plus deals closed in the last 12 months, with the
+fields above. Closed deals are needed: they give this company's own win rate and cycle.
 
-## Phase 3 — Run the Analysis
+**Putting deals on one scale.** Contract value = `value` if present, otherwise
+`monthly × months`. If a retainer has no committed term, use 6 months and mark every such
+deal "term assumed". Show monthly recurring value as its own KPI next to total value.
 
-Compute the following metrics from the normalized data:
+## 2. Check hygiene first
 
-### 3.1 Pipeline Overview
-- **Total pipeline value** — sum of all open deal amounts
-- **Weighted pipeline value** — sum of (amount × probability) for each deal
-- **Deal count** — total number of open deals
-- **Average deal size** — total value / deal count
-- **Median deal size**
-- **Pipeline coverage ratio** — total pipeline / monthly quota (ask user for quota if not provided, or skip)
+List problems in a small block at the top of the report, then continue with what is usable:
+- no value, or a value of zero
+- close date in the past on an open deal
+- no owner
+- no activity logged for 30+ days
+- duplicates (same account and similar deal name)
+- stage names that do not match the rest (typos, retired stages)
 
-### 3.2 Stage Breakdown
-For each stage:
-- Deal count
-- Total value
-- Weighted value
-- Average deal size
-- % of total pipeline value
-- Conversion rate stage-to-stage (if historical closed/lost data is available)
+Give the share of deals affected. If more than a third of deals have no `close` date or no
+`last_activity`, say the forecast or the stall check is unreliable and why.
 
-### 3.3 Stuck Deals (At-Risk)
-A deal is **stuck** if:
-- It has been in the current stage for more than 2× the average time in that stage, OR
-- Close date is more than 14 days in the past and still open, OR
-- Created more than 90 days ago and still in an early stage (Prospecting / Qualification)
+## 3. Calculations
 
-For each stuck deal, surface:
-- Deal name + company
-- Stage
-- Days in current stage
-- Amount
-- Owner
-- Recommended action (based on stage — see Action Templates below)
+### 3.1 Snapshot
+Open deals, total contract value, monthly recurring value, median deal size (the median,
+because one large deal distorts the average in a small pipeline).
 
-### 3.4 Forecast
-Group deals by close date into:
-- **This month** — sum of weighted values closing this calendar month
-- **Next month** — sum of weighted values closing next calendar month
-- **This quarter** — sum of weighted values closing this quarter
-- **Beyond** — everything else
+### 3.2 Stages
+For each stage: count, value, median days in stage. If closed deals exist, the conversion
+from each stage to the next, measured on the company's own history.
 
-For each period: deal count, weighted value, raw value, and list of top 5 deals by amount.
+Probabilities per stage come from history when there are at least 20 closed deals. Otherwise
+use these starting points, label them "default, not measured", and suggest replacing them:
 
-Flag deals closing this month with probability < 30% as "at risk of slipping".
+Defaults in stage order: discovery call held 10%, scoping or solution 20%, proposal sent 35%,
+negotiation or procurement 60%, verbal yes with the contract in progress 85%. Rename the stages
+to match the CRM and keep the order.
 
-### 3.5 Rep Performance
-For each owner / rep:
-- Deal count
-- Total pipeline value
-- Weighted pipeline value
-- Average deal size
-- Number of stuck deals
-- Deals closing this month (count + value)
-- Rank by weighted pipeline value
+### 3.3 Where deals stall
+Flag a deal when any of these holds, and give the reason in words:
+- **Proposal silence:** in "Proposal sent" for 14+ days with no logged activity.
+- **Slow stage:** days in stage above twice the median for that stage among won deals
+  (or among all deals if there are fewer than 10 won).
+- **Paper stage:** in procurement or contract for 30+ days.
+- **Overdue:** close date passed while the deal is still open.
+- **One contact:** `contacts` = 1 on a deal in proposal or later.
+- **Old and early:** opened 90+ days ago and still before the proposal.
 
-### 3.6 Sales Velocity
-- **Average sales cycle length** — average days from created_date to today for open deals
-  (use closed_won deals if available for a more accurate figure)
-- **Average days per stage** — mean time spent in each stage across all deals
-- **Velocity by rep** — average cycle length per owner
-- **Deals at risk of missing close date** — close date within 7 days, probability < 50%
+For each flagged deal: account, owner, stage, days, value, reason, and the next step from the
+table in section 5.
 
----
+### 3.4 Win rate, cycle, coverage
+From closed deals of the last 12 months: win rate by count and by value, median days from
+open to won, top three lost reasons with counts.
 
-## Phase 4 — Build the Dashboard Artifact
+Coverage needed = 1 ÷ win rate (by value). A team that wins 25% needs 4× the target in open
+pipeline, so the familiar 3× rule only fits a team that wins about a third. If the user gives a monthly or quarterly target, compare
+pipeline closing in that period against target × needed coverage.
 
-Render a **single interactive React artifact** with the following structure.
-Use Recharts for all charts. Use Tailwind utility classes for layout and styling.
-The dashboard must work with the actual computed data — no mock data.
+### 3.5 Forecast
+For each of this month, next month and this quarter:
+- **Commit:** verbal yes or contract in progress, close date inside the period.
+- **Best case:** commit plus negotiation and procurement inside the period.
+- **Pipeline:** everything else with a close date inside the period, weighted by probability.
 
-### Dashboard Layout
+Flag deals expected this month that are still before the proposal stage: they will almost
+certainly slip.
 
-```
-┌─────────────────────────────────────────────────────┐
-│  HEADER: Pipeline Analysis — [date range] — [source] │
-│  Data quality warnings (if any)                      │
-├──────────┬──────────┬──────────┬────────────────────┤
-│ KPI Card │ KPI Card │ KPI Card │ KPI Card           │
-│ Total    │ Weighted │ Deals    │ Avg Deal Size      │
-│ Pipeline │ Pipeline │ Count    │                    │
-├──────────┴──────────┴──────────┴────────────────────┤
-│ TABS: Overview │ Stages │ At-Risk │ Forecast │ Reps │ Velocity │
-├─────────────────────────────────────────────────────┤
-│ [Tab content — charts + tables]                      │
-└─────────────────────────────────────────────────────┘
-```
+### 3.6 Owners
+Per owner: open deals, value, flagged deals, commit this month, median days since last
+activity. Rank by commit, then by best case. With one owner, fold this into the snapshot.
 
-### Tab Contents
+## 4. The dashboard
 
-**Overview tab**
-- Bar chart: pipeline value by stage
-- Pie/donut chart: deal count by stage
-- Summary table: stage name | deals | value | weighted value | % of pipeline
+One self-contained HTML file. Chart.js from a CDN is fine; data is baked into the file, so
+it opens offline once the library is cached.
 
-**Stages tab**
-- Funnel visualization: deals flowing stage to stage
-- Table: stage | count | total value | avg deal size | avg days in stage
+Layout, top to bottom:
+1. Title, data source, export date, and the hygiene block.
+2. KPI cards: open value, monthly recurring value, commit this month, win rate, median cycle.
+   Where a target exists, the card shows the target next to the fact.
+3. Value by stage: horizontal bars with the value printed on each bar.
+4. Forecast: commit, best case and pipeline per period as grouped bars, one value axis.
+5. Flagged deals: a table sorted by value, the reason in plain words, colour only on the
+   reason column.
+6. Owners: a table, sortable by clicking a header.
+7. Lost reasons: a bar chart, or a donut with at most 4 slices (top 3 plus a grey "Other").
 
-**At-Risk tab**
-- Summary: X stuck deals, $Y at risk
-- Table with colored risk indicators:
-  - Red: close date overdue
-  - Orange: stuck > 2× avg stage time
-  - Yellow: early stage > 90 days
-- Columns: deal | company | owner | stage | days stuck | amount | reason | recommended action
+Design rules:
+- Each panel has a short title; the one-line reading of the panel ("3 of 5 proposals have had
+  no answer for 2+ weeks") sits behind a small ⓘ icon next to the title.
+- One accent colour for the item that matters; everything else neutral. Red only for overdue.
+- Value labels on bars; no empty gridlines; no dual axes.
+- Money in the currency of the data; dates in the user's locale.
+- `<meta name="viewport">`, grid tracks that shrink, tables that scroll inside their panel,
+  one column on phones.
 
-**Forecast tab**
-- Grouped bar chart: weighted vs raw value per period (this month / next month / quarter / beyond)
-- Table per period: deals closing, count, weighted value
-- "At risk of slipping" list highlighted in orange
+## 5. Actions
 
-**Reps tab**
-- Horizontal bar chart: weighted pipeline by rep
-- Table: rep | deals | total value | weighted value | avg deal size | stuck deals | closing this month
-
-**Velocity tab**
-- Bar chart: avg days per stage
-- Table: rep | avg cycle length | deals closing this month | at-risk deals
-
-### Styling rules
-- Use a clean, professional color palette: blues and greens for positive metrics,
-  orange/red for at-risk items
-- KPI cards: large number, label, and a subtle trend indicator if comparable data exists
-- Tables: sortable columns (click header to sort), alternating row colors
-- All monetary values formatted as currency (€ or $ based on user's data)
-- Dates formatted as DD/MM/YYYY for European users, MM/DD/YYYY for US
-
----
-
-## Phase 5 — Recommendations
-
-After the dashboard, output a short prioritized action list (max 8 items) in this format:
+After the dashboard, a list of 8 actions or fewer, ordered by value at risk. Each one names
+the deal, the owner, the step and the day.
 
 ```
-## Priority Actions
-
-1. [URGENT] Deal X (Company Y) — close date passed 12 days ago, $45K at risk.
-   → Owner: follow up today, update stage or mark lost.
-
-2. [THIS WEEK] 3 deals stuck in Proposal Sent for 30+ days.
-   → Send a follow-up sequence via lemlist campaign "Proposal Follow-up".
-
-3. [FORECAST] Pipeline coverage for this month is 1.2× quota — below the 3× healthy ratio.
-   → Prioritize moving 5 deals from Demo to Proposal this week.
+1. [Account], [value], proposal silent 19 days. Owner: [name].
+   Call the day-to-day contact today and ask what is blocking the decision; if no answer by
+   Friday, ask the sponsor directly.
 ```
 
-Tailor recommendations to what's visible in the data. Never invent metrics not present.
+Next steps by situation:
 
----
-
-## Action Templates by Stage
-
-Use these when recommending actions for stuck deals:
-
-| Stage | Recommended Action |
+| Situation | Step |
 |---|---|
-| Prospecting | Re-qualify or disqualify — no activity in 30+ days suggests poor fit |
-| Qualification | Schedule a discovery call — go deep on consequence/impact of the pain (no BANT). See `cold-call-script` discovery framework |
-| Demo scheduled | Send pre-demo prep email + confirm attendance |
-| Proposal sent | Send a follow-up sequence, offer to answer objections on a call |
-| Negotiation | Escalate to manager or offer a limited-time incentive |
-| Contract sent | Direct call to legal/finance contact to unblock signature |
+| Proposal silence | A call, not another email: ask what changed since the proposal went out. |
+| One contact | Ask the contact who else signs off and offer a short session for that person. |
+| Paper stage | Get the procurement contact's name; send the MSA and security answers they still need. |
+| Slow early stage | Requalify with the qualification framework; close it as lost if there is no "why now". |
+| Overdue | Move the close date with a reason, or close the deal. Do not leave it overdue. |
 
----
+## 6. Before you hand it over
 
-## Handling Missing Data Gracefully
+- The user saw the column mapping table before any calculation ran.
+- Defaults for probabilities and retainer terms carry a label inside the dashboard.
+- Numbers in the actions match the numbers in the dashboard.
+- Every deal and person in the report exists in the data.
 
-- If `probability` is missing: derive from stage using defaults — note this in the dashboard header
-- If `created_date` is missing: skip velocity calculations — note this
-- If only one rep: skip rep performance tab, merge into overview
-- If no close dates: skip forecast tab — note this
-- Never crash or refuse to analyze — always produce the best analysis possible with available data
+## Credits
+
+Idea adapted from a public outbound-skills collection; rewritten.
+Written by Victor Shulga (victorshulga.com).

@@ -1,118 +1,141 @@
 ---
 name: value-prop-lister
-description: >
-  Extract and organize all value propositions from a company website or materials into a
-  structured inventory, categorized by type and mapped to personas and outreach channels.
-  Use when asked "list my value props", "what value do we provide", "extract our benefits",
-  "summarize our value propositions", "what should I highlight in outreach",
-  "organize our messaging", or "what do we offer customers".
-  Use to inform offer framing, email copy, and sales enablement.
+description: >-
+  Builds an evidence-graded inventory of what a B2B service company (dev or IT outsourcing,
+  agency, AEC/BIM outsourcing, consultancy) actually delivers to its buyers. Reads the website,
+  case studies, proposals and call notes; turns service features ("dedicated team", "ISO 27001",
+  "senior Revit modellers") into buyer outcomes; grades each claim by proof strength and by how
+  many competitors say the same thing; maps claims to the decision maker and the champion;
+  ranks them into lead, support and table stakes; lists unproven claims and buried proof; and
+  drafts outreach lines from the top claims. Use when the user says "list our value props",
+  "what value do we provide", "what should we lead with", "extract our benefits", "organise our
+  messaging", "ціннісні пропозиції", "що ми даємо клієнту", "з чим іти в аутріч". Feeds
+  offer-ladder and proposal-generator. NOT the positioning statement or competitor map
+  (competitor-finder), NOT a full sequence (sequence writers).
 ---
 
-# Value Proposition Lister — Extract what value you actually provide
+# Value proposition inventory for service companies
 
-You are a value proposition analyst. You extract every value proposition from a company's materials, translate features into outcomes, and organize them in a format immediately usable for outreach and positioning.
+A service company's website usually says what the company is: years on the market, headcount,
+tech stack, certifications. Buyers read it and still cannot answer the question they came
+with: what will be different for me after I sign? This skill pulls every claim out of the
+company's own materials, rewrites it as a change for the buyer, and shows which claims have
+proof behind them.
 
-**The core problem:** most companies have scattered benefits on their website, features mixed with outcomes, no hierarchy, no persona mapping. You fix that.
-
----
-
-## Step 1 — Request sources
-
-Ask for at least ONE:
-- Company website URL (check homepage, features, pricing, case studies, testimonials)
-- Product description or pitch deck
-- Specific pages to analyze
-
----
-
-## Step 2 — Extract and categorize
-
-**What to look for:**
-- Direct value statements ("Save 10 hours per week")
-- Features that imply value ("AI personalization" → "Personalize at scale")
-- Customer outcomes from case studies ("Increased reply rates by 3x")
-- Comparative claims ("Unlike X, we Y")
-- Customer quotes about results
-
-**7 value prop types:**
-1. **Outcome** — what you achieve ("Book 3x more meetings")
-2. **Efficiency** — time/effort saved ("Cut list building from 4h to 20min")
-3. **Quality** — better results ("40% reply rates vs. 8% industry average")
-4. **Cost** — ROI, savings ("Replace $70K SDR with $99/month")
-5. **Experience** — ease of use, support ("Set up in 5 minutes, no tech team")
-6. **Risk reduction** — security, compliance, reliability ("SOC 2 certified")
-7. **Differentiation** — unique capabilities ("Only tool with AI + deliverability built-in")
+Answer in the user's language. Every claim in the output carries its source.
 
 ---
 
-## Step 3 — Output the inventory
+## 1. Sources (ask once)
 
----
-# Value Proposition Inventory: [Company Name]
-*Sources: [list] | Date: [date] | Total identified: [X]*
+Ask for whatever exists, and work with at least one:
+- the website: home, services, industries, case studies, about, pricing if public
+- 2–3 recent proposals or pitch decks
+- notes or transcripts from sales calls, especially won deals
+- reviews on B2B review sites and the company's map listing
+- the names of 2–3 competitors the buyer compares them with
 
-## Primary value proposition
-**The main promise:** [Overarching value — the "big idea" customers buy]
-**Target audience:** [Who it resonates with most]
+If only the website is available, say that the inventory is outside-in and that proof from
+delivery (numbers the client tracks internally) is probably missing.
 
-## Value props by category
+## 2. Extract claims
 
-### Outcome value props
-1. **[Value prop]**
-   - What it is: [Description]
-   - Evidence: [Where found]
-   - Best for: [Which ICP/persona]
-   - Use when: [Context — pipeline-focused, urgency-driven, etc.]
+Collect every sentence that promises something to a buyer, and every fact that could back a
+promise. Keep the original wording and the URL or file name.
 
-[Continue for each category — only include categories with real findings]
+Then rewrite each feature as an outcome for the buyer. The test: could the buyer repeat it to
+their boss as a reason to sign?
 
-## Value props by persona
+| Feature as written | Outcome for the buyer |
+|---|---|
+| "Dedicated team of 15 engineers" | "You get capacity for the next project without a 3-month hiring cycle" |
+| "ISO 27001 certified" | "Your security review takes days instead of a quarter" |
+| "Senior BIM modellers" | "Coordinated models arrive without your BIM manager redoing them at night" |
 
-**For [Persona 1 — e.g., SDRs]:** Top 3 + why each resonates
-**For [Persona 2 — e.g., VP Sales]:** Top 3 + why each resonates
-**For [Persona 3]:** Top 3 + why each resonates
+If a feature has no believable outcome, keep it in the table-stakes list and move on.
 
-## Value prop hierarchy
+## 3. Sort by what service buyers pay for
 
-**Tier 1 — Lead with these** (strongest, most differentiated, most proven):
-1. [Value prop] — why it's tier 1
+Use these buckets. A claim can sit in one bucket only; pick the closest.
 
-**Tier 2 — Supporting props** (important but not primary differentiators):
-1. [Value prop]
+- Capacity: more output without hiring.
+- Speed: time to start, turnaround, time to first result.
+- Quality and risk: less rework, fewer defects or clashes, compliance, security.
+- Cost: compared with a fully loaded in-house hire, or with the current vendor.
+- Expertise: skills the buyer does not have and does not want to build.
+- Management load: less of the buyer's senior time spent checking and coordinating.
+- Continuity: what happens when someone leaves or the scope changes mid-project.
 
-**Tier 3 — Table stakes** (expected, not differentiating — don't lead with these):
-1. [Value prop]
+Empty buckets are a finding. Report them; do not fill them with guesses.
 
-## Quick reference by channel
+## 4. Grade every claim
 
-**Cold email subject lines:** [3 options — punchy, outcome-focused]
-**Email opener:** [1–2 sentences using top value prop]
-**LinkedIn message:** [Short, intriguing version]
+Two grades per claim.
 
-## Value props with proof
+**Proof strength**
+- **A:** a number tied to a named or clearly described client ("cut coordination rework from
+  3 rounds to 1 for a UK MEP contractor").
+- **B:** a described case without a number, or a number without a case.
+- **C:** a claim with nothing behind it.
 
-| Value Proposition | Proof Point | Source |
-|---|---|---|
-| [VP 1] | [Metric, testimonial, or case study] | [Source] |
-| [VP 2] | [Proof] | [Source] |
+**Distinctiveness**, checked against the competitor sites from step 1:
+- **Own:** no compared competitor says it.
+- **Shared:** one or two say something close.
+- **Generic:** everyone says it ("quality", "communication", "flexibility").
 
-## Gaps and recommendations
+A claim is worth leading with only when it is A or B on proof and Own or Shared on
+distinctiveness.
 
-**Unproven claims:** [Value props stated but not backed by data or customer evidence — recommend getting proof or removing]
-**Underutilized:** [Strong proof points that aren't in main messaging — elevate these]
-**Missing:** [Things competitors claim that aren't addressed — build or explain why not needed]
-**Conflicts:** [Inconsistencies between pages — recommend alignment]
----
+## 5. Map to people
 
----
+Service deals usually have two people who matter: the one who signs (founder, COO, head of
+delivery) and the one who lives with the vendor every day (project lead, BIM manager,
+engineering manager). They care about different things. For each, pick the top three claims
+and say in one line why that person would care.
 
-## Quality bar
+## 6. Output
 
-Before delivering:
-- Checked all key pages (homepage, features, pricing, case studies, testimonials)?
-- Organized by type AND by persona?
-- Included a clear tier ranking (what to lead with)?
-- Linked value props to proof where it exists?
-- Identified gaps and unproven claims honestly?
-- Provided channel-specific versions ready for outreach?
+```
+VALUE PROPOSITION INVENTORY: [Company]
+Sources: [list] · Date: [date] · Claims found: [n] · Competitors compared: [names or "none"]
+
+The main promise
+[One sentence: the change a buyer gets, in buyer terms. If the materials do not support
+one, say so and give the closest candidate.]
+
+Inventory
+| # | Claim (buyer outcome) | Bucket | Proof | Distinct | Source |
+|---|---|---|---|---|---|
+
+By person
+Decision maker ([role]): 1. … 2. … 3. … (why each)
+Day-to-day owner ([role]): 1. … 2. … 3. … (why each)
+
+Ranking
+Lead with: [A/B + Own/Shared claims, max 3]
+Support: [claims that back the lead ones]
+Table stakes: [say only when asked; never open with these]
+
+Gaps
+Unproven: [C-grade claims; get proof or drop them]
+Buried proof: [strong facts that sit in a case study or review but not in the main pages]
+Empty buckets: [and whether a competitor fills them]
+Contradictions: [pages or decks that promise different things]
+
+Outreach lines (from the "Lead with" claims)
+Email opener: [1–2 sentences]
+LinkedIn note: [under 200 characters]
+Call guess: [one sentence for the cold-call-script "guess" block]
+```
+
+## 7. Before you hand it over
+
+- Every claim has a source; nothing is paraphrased into a stronger promise than the source makes.
+- No invented numbers. A missing number stays missing and becomes a gap.
+- The "Lead with" list has three items or fewer.
+- Client names from case studies appear only if they are public on the company's own site.
+
+## Credits
+
+Idea adapted from a public outbound-skills collection; rewritten.
+Written by Victor Shulga (victorshulga.com).
