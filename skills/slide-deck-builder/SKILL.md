@@ -133,5 +133,5 @@ Give the user:
 
 ## Credits
 
-Idea adapted from lemlist's public `slide-deck-builder` skill (github.com/l3mpire/claude-skills); rewritten.
+Idea adapted from a public outbound-skills collection; rewritten.
 Written by Victor Shulga (victorshulga.com).
