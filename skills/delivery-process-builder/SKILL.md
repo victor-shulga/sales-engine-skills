@@ -51,7 +51,7 @@ Ask for or find:
   is installed and none exists, build one first.
 
 If the client has no offer ladder or positioning yet, stop and say so. A delivery process
-without them describes nothing. If installed, `08-offers` and `06-positioning`
+without them describes nothing. If installed, `gtm-offers` and `gtm-positioning`
 (pack `gtm-strategy-skills`) cover those steps.
 
 ### 2. Interview
