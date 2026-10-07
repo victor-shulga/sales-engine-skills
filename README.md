@@ -1,6 +1,6 @@
 # sales-engine
 
-Sales execution skills for B2B service companies: discovery prep, call scripts, value propositions, pipeline analysis, an offer ladder and the proposal that closes — the draft → brief → proposal chain in one pack.
+Sales execution skills for B2B service companies: discovery prep, call scripts, value propositions, pipeline analysis, an offer ladder and the proposal that closes, with the draft → brief → proposal chain in one pack.
 
 Part of the GTM-system methodology by [Victor Shulga](https://victorshulga.com) (Fractional CRO).
 
@@ -11,24 +11,24 @@ Part of the GTM-system methodology by [Victor Shulga](https://victorshulga.com) 
 /plugin install sales-engine@sales-engine-skills
 ```
 
-Restart your Claude Code session after install — skills load at session start.
+Restart your Claude Code session after install: skills load at session start.
 
 ## Skills included
 
 **From first call to proposal**
 
-- `meeting-prep` — a ≤500-word brief before the call
-- `cold-call-script` — the script for the call itself
-- `value-prop-lister` — the value propositions the offer is built from
-- `offer-ladder` — free → low → mid → high tiers around one core transformation, grounded in real services and cases
-- `proposal-generator` — two proposals on the client's brand: a call deck and a send version, plus a critique of the quotes they send today
-- `pipeline-analysis` — where deals stall and the follow-ups that move them
+- `meeting-prep`: a ≤500-word brief before the call
+- `cold-call-script`: the script for the call itself
+- `value-prop-lister`: the value propositions the offer is built from
+- `offer-ladder`: free → low → mid → high tiers around one core transformation, grounded in real services and cases
+- `proposal-generator`: two proposals on the client's brand: a call deck and a send version, plus a critique of the quotes they send today
+- `pipeline-analysis`: where deals stall and the follow-ups that move them
 
 **Qualification, process, decks**
 
-- `scope-qualifier` — qualify a deal on SCOPE (Signal, Capability gap, Outcome at stake, Players and path, Engagement fit): verdict, CRM fields, what to find out next; maps onto MEDDPICC or BANT
-- `delivery-process-builder` — the buyer-facing delivery process from a founder interview: what the buyer gets week by week, exit points, their inputs, risk handling, then a site page, a call-deck slide and a proposal block
-- `slide-deck-builder` — a source document or notes turned into a .pptx deck (pitch, QBR or board, case study, onboarding) with an approved outline and a render check
+- `scope-qualifier`: qualify a deal on SCOPE (Signal, Capability gap, Outcome at stake, Players and path, Engagement fit): verdict, CRM fields, what to find out next; maps onto MEDDPICC or BANT
+- `delivery-process-builder`: the buyer-facing delivery process from a founder interview: what the buyer gets week by week, exit points, their inputs, risk handling, then a site page, a call-deck slide and a proposal block
+- `slide-deck-builder`: a source document or notes turned into a .pptx deck (pitch, QBR or board, case study, onboarding) with an approved outline and a render check
 
 ## Requirements & integrations
 
@@ -43,21 +43,21 @@ Skills degrade gracefully: without MCP connections they work from pasted data (C
 
 ## Changelog
 
-**0.4.1** — `cold-call-script`, `value-prop-lister` and `pipeline-analysis` rewritten for service companies: the call script now opens on a real reason and a guess about the buyer's situation, the value-prop inventory grades every claim by proof and by how many competitors say the same, and the pipeline review puts project and retainer deals on one scale and flags proposal silence and the contract stage.
+**0.4.1**: `cold-call-script`, `value-prop-lister` and `pipeline-analysis` rewritten for service companies: the call script now opens on a real reason and a guess about the buyer's situation, the value-prop inventory grades every claim by proof and by how many competitors say the same, and the pipeline review puts project and retainer deals on one scale and flags proposal silence and the contract stage.
 
-**0.4.0** — `scope-qualifier`, `delivery-process-builder` and `slide-deck-builder` added (9 skills). `meeting-prep` now points to the intent triage in `reply-objection-handler`.
+**0.4.0**: `scope-qualifier`, `delivery-process-builder` and `slide-deck-builder` added (9 skills). `meeting-prep` now points to the intent triage in `reply-objection-handler`.
 
-**0.3.0** — the sales block now ends in a proposal. `proposal-generator` moved here from
+**0.3.0**: the sales block now ends in a proposal. `proposal-generator` moved here from
 [gtm-skills](https://github.com/victor-shulga/gtm-skills) (one home per skill, as before) and
 `offer-ladder` was added, so draft → brief → offer → proposal lives in one pack.
 
-**0.2.0** — `28-meeting-intent-scorer` removed. Scoring a reply for meeting intent is one step of
+**0.2.0**: `28-meeting-intent-scorer` removed. Scoring a reply for meeting intent is one step of
 answering that reply, not a separate job: it has been folded into `reply-objection-handler` in the
 [outbound-engine](https://github.com/victor-shulga/outbound-engine-skills) bundle, which triages the
 reply for intent and speed and then writes the actual response. Numeric prefixes dropped throughout.
 
-**0.1.0** — initial bundle.
+**0.1.0**: initial bundle.
 
 ## License
 
-MIT — see [LICENSE](LICENSE).
+MIT, see [LICENSE](LICENSE).
