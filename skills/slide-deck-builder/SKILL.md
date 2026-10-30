@@ -135,3 +135,23 @@ Give the user:
 
 Idea adapted from a public outbound-skills collection; rewritten.
 Written by Victor Shulga (victorshulga.com).
+
+## Terms and plain-language output
+
+<!-- glossary:start terms=takeaway-headline,speaker-notes,gaps-list,qbr -->
+Rules for every document a client or their team will read (review, roast, canvas, offer cards, instruction):
+
+1. **Open with «Словник цього документа»**: only the terms that actually appear in it, at most 10, each as «термін: що це простими словами». Like the definitions section of a contract.
+2. **No internal codes or letter scales in the text** (A/B/C, D L T E, BLEND numbers without words, Own/Shared/Generic, Z1.4, GATE 2.5, T1–T6). Write the meaning instead: «є цифра з клієнтом», not «A».
+3. **Use the plain form from the table below.** English stays only for tool names and for copy that ships in English (promises, hooks, subject lines). If the document is in another language, translate the plain form, never the internal term.
+4. **Do not score what cannot exist yet.** A block that depends on work not done (signal catalog, case studies, a previous step) gets «пропущено: спершу потрібно <що саме>», not a score.
+5. **Every section of a review opens with one concrete action** («до наступного дзвінка: …»), then at most five lines of why. No paragraph that only restates the framework.
+
+
+| Internal term (this skill) | Write for the reader | What it means |
+|---|---|---|
+| headline = takeaway, headline test | заголовок-висновок | заголовок слайда повним реченням каже головну думку; лише за заголовками видно весь аргумент |
+| speaker notes | нотатки доповідача | текст під слайдом для того, хто виступає: джерела цифр і що сказати вголос |
+| gaps list | список прогалин | що прибрали або послабили через брак даних і що треба дописати перед відправкою |
+| QBR | квартальна зустріч з клієнтом | раз на квартал разом з клієнтом підсумовуєте результати і плануєте наступні кроки. |
+<!-- glossary:end -->

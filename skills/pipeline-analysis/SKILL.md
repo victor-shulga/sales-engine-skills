@@ -177,3 +177,33 @@ Next steps by situation:
 
 Idea adapted from a public outbound-skills collection; rewritten.
 Written by Victor Shulga (victorshulga.com).
+
+## Terms and plain-language output
+
+<!-- glossary:start terms=pipeline,win-rate,sales-cycle,pipeline-coverage,forecast-commit,deal-stall,crm-hygiene,retainer,mrr,msa,procurement,multi-thread,economic-buyer,day-to-day-owner -->
+Rules for every document a client or their team will read (review, roast, canvas, offer cards, instruction):
+
+1. **Open with «Словник цього документа»**: only the terms that actually appear in it, at most 10, each as «термін: що це простими словами». Like the definitions section of a contract.
+2. **No internal codes or letter scales in the text** (A/B/C, D L T E, BLEND numbers without words, Own/Shared/Generic, Z1.4, GATE 2.5, T1–T6). Write the meaning instead: «є цифра з клієнтом», not «A».
+3. **Use the plain form from the table below.** English stays only for tool names and for copy that ships in English (promises, hooks, subject lines). If the document is in another language, translate the plain form, never the internal term.
+4. **Do not score what cannot exist yet.** A block that depends on work not done (signal catalog, case studies, a previous step) gets «пропущено: спершу потрібно <що саме>», not a score.
+5. **Every section of a review opens with one concrete action** («до наступного дзвінка: …»), then at most five lines of why. No paragraph that only restates the framework.
+
+
+| Internal term (this skill) | Write for the reader | What it means |
+|---|---|---|
+| pipeline | воронка угод | усі відкриті угоди з етапами, сумами і датами |
+| win rate | частка виграних угод | скільки угод з поданих пропозицій закінчилось підписом. |
+| cycle length, median cycle | тривалість угоди | скільки днів минає від відкриття угоди до підписання; беремо медіану, щоб одна довга угода не спотворювала |
+| coverage, 3× rule | запас угод до плану | у скільки разів сума відкритих угод більша за план; потрібний запас дорівнює 1, поділеному на частку виграних |
+| forecast: commit / best case / pipeline | прогноз: майже точно · можливо · решта | три рівні прогнозу: угоди з усним «так», угоди на переговорах і всі інші з урахуванням імовірності |
+| stall flags: proposal silence, slow stage, paper stage, overdue, old and early | де застрягла угода | позначки для угод, що довго стоять: тиша після пропозиції, затяжні погодження договору, прострочена дата |
+| hygiene, data hygiene | порядок даних у CRM | угоди без суми, власника, дати чи активності; якщо таких багато, прогнозу довіряти не можна |
+| retainer | щомісячний договір | оплата фіксованої суми щомісяця за постійний обсяг роботи |
+| MRR | щомісячний регулярний дохід | сума, яку клієнти платять щомісяця за поточними договорами. |
+| MSA | рамковий договір | загальний договір з умовами співпраці, під який потім підписують окремі замовлення |
+| procurement, paper stage | погодження у відділі закупівель | після усного «так» договір проходить юристів, безпеку і закупівлі, це може додати кілька тижнів |
+| multi-thread map | карта людей в угоді | хто ще впливає на рішення і що кожному показати: фінансисту окупність, технічному безпеку, закупівлям умови |
+| economic buyer, sponsor | той, хто платить | людина, яка розпоряджається бюджетом і підписує; без доступу до неї угода або продовження під ризиком |
+| day-to-day owner, champion | той, хто працюватиме з вами щодня | керівник проєкту, BIM-менеджер, керівник розробки; йому важливе інше, ніж ОПР |
+<!-- glossary:end -->

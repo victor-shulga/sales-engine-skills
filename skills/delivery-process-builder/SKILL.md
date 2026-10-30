@@ -162,3 +162,27 @@ never feed back into the master silently.
 ## Credits
 
 Method and template by Victor Shulga (victorshulga.com).
+
+## Terms and plain-language output
+
+<!-- glossary:start terms=delivery-process,stop-point,reality-gate,baseline-scenario,deliverable,offer-ladder,cta,done-adopted -->
+Rules for every document a client or their team will read (review, roast, canvas, offer cards, instruction):
+
+1. **Open with «Словник цього документа»**: only the terms that actually appear in it, at most 10, each as «термін: що це простими словами». Like the definitions section of a contract.
+2. **No internal codes or letter scales in the text** (A/B/C, D L T E, BLEND numbers without words, Own/Shared/Generic, Z1.4, GATE 2.5, T1–T6). Write the meaning instead: «є цифра з клієнтом», not «A».
+3. **Use the plain form from the table below.** English stays only for tool names and for copy that ships in English (promises, hooks, subject lines). If the document is in another language, translate the plain form, never the internal term.
+4. **Do not score what cannot exist yet.** A block that depends on work not done (signal catalog, case studies, a previous step) gets «пропущено: спершу потрібно <що саме>», not a score.
+5. **Every section of a review opens with one concrete action** («до наступного дзвінка: …»), then at most five lines of why. No paragraph that only restates the framework.
+
+
+| Internal term (this skill) | Write for the reader | What it means |
+|---|---|---|
+| delivery process, methodology | як ми працюємо: процес для покупця | що покупець отримує щотижня, де може зупинитись і що потрібно від його команди |
+| stop point | точка зупинки | місце після першого етапу, де клієнт може завершити співпрацю, отримавши готовий результат за окрему ціну |
+| reality gate | звірка з реальними проєктами | описаний процес перевіряємо на трьох останніх проєктах і прайсі; розбіжність блокує публікацію |
+| baseline scenario | базовий сценарій | типовий клієнт, для якого написані терміни; більший обсяг збільшує і терміни, і ціну |
+| deliverable | готовий результат етапу | що клієнт тримає в руках у конкретний день: документ, звіт, налаштована система |
+| offer ladder, tiers | драбина оферів | кілька оферів від безкоштовного до найдорожчого, які ведуть того самого клієнта до одного результату; на кожній сходинці він платить і довіряє більше |
+| CTA | прохання в кінці листа | конкретний маленький наступний крок: відповісти, подивитися, погодитися на дзвінок |
+| definition of done / definition of adopted | готово · впроваджено | готово, коли результат існує; впроваджено, коли ним реально користуються в роботі |
+<!-- glossary:end -->

@@ -66,12 +66,38 @@ If the number cannot be reached, write `[unknown]` and make it the goal of the n
 
 ---
 
+## Terms and plain-language output
+
+<!-- glossary:start terms=scope-framework,why-now,capability-gap,deal-verdict,decision-maker,economic-buyer,day-to-day-owner,meddpicc-bant,engagement-model,crm-stage -->
+Rules for every document a client or their team will read (review, roast, canvas, offer cards, instruction):
+
+1. **Open with «Словник цього документа»**: only the terms that actually appear in it, at most 10, each as «термін: що це простими словами». Like the definitions section of a contract.
+2. **No internal codes or letter scales in the text** (A/B/C, D L T E, BLEND numbers without words, Own/Shared/Generic, Z1.4, GATE 2.5, T1–T6). Write the meaning instead: «є цифра з клієнтом», not «A».
+3. **Use the plain form from the table below.** English stays only for tool names and for copy that ships in English (promises, hooks, subject lines). If the document is in another language, translate the plain form, never the internal term.
+4. **Do not score what cannot exist yet.** A block that depends on work not done (signal catalog, case studies, a previous step) gets «пропущено: спершу потрібно <що саме>», not a score.
+5. **Every section of a review opens with one concrete action** («до наступного дзвінка: …»), then at most five lines of why. No paragraph that only restates the framework.
+
+
+| Internal term (this skill) | Write for the reader | What it means |
+|---|---|---|
+| SCOPE (S Signal · C Capability gap · O Outcome at stake · P Players and path · E Engagement fit) | п'ять питань кваліфікації угоди | чому зараз, чому не своїми силами, що на кону в цифрах, хто вирішує і як, чи підходить формат і який наступний крок; у документі пишемо назви блоків словами, без літер |
+| why now, cost of inaction | ціна бездіяльності | що клієнт втрачає щомісяця, поки нічого не змінює |
+| capability gap, build vs buy | чому не своїми силами | що заважає клієнту закрити задачу власною командою або наймом; головний конкурент сервісної компанії |
+| verdict: pursue / nurture / disqualify | рішення по угоді: ведемо · гріємо · закриваємо | одне з трьох рішень завжди з причиною; «гріємо» означає регулярні дотики без активного продажу |
+| decision maker | ОПР (особа, що приймає рішення) | той, хто підписує: власник, операційний директор, керівник напряму |
+| economic buyer, sponsor | той, хто платить | людина, яка розпоряджається бюджетом і підписує; без доступу до неї угода або продовження під ризиком |
+| day-to-day owner, champion | той, хто працюватиме з вами щодня | керівник проєкту, BIM-менеджер, керівник розробки; йому важливе інше, ніж ОПР |
+| MEDDPICC, BANT | поля кваліфікації у вашій CRM | готові набори полів для оцінки угоди, які вже можуть бути у CRM; ми лише переносимо в них відповіді |
+| engagement model: dedicated team / embedded (staff augmentation) / project | формат співпраці: виділена команда · фахівці у вашу команду · проєкт | як ви працюєте з клієнтом: окрема команда під нього, ваші люди в його команді або фіксований проєкт |
+| CRM stage | етап угоди в CRM | на якому кроці продажу угода зараз і куди її переносимо після розмови |
+<!-- glossary:end -->
+
 ## Output
 
 | Field | Rule |
 | :-- | :-- |
 | Verdict | pursue / nurture / disqualify + one-line reason |
-| S to E fields | filled, or `[unknown]`; never guessed |
+| The five blocks | each block named in words (why now · why not in-house · what is at stake · who decides and how · fit and next step), filled or `[unknown]`; never guessed |
 | Red flags | from the list below, or "none" |
 | Missing information | the 1 to 3 unknowns that block the verdict, each with who asks and when |
 | Next step | date, owner, what gets delivered |

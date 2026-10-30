@@ -56,7 +56,7 @@ deeper research, hand it to `deep-company-analyser` first, then prep.
 | `recommended_agenda` | Time-blocked, matched to meeting_type (30 or 60 min). See templates. |
 | `success_metrics` | 2-3 bullets defining a successful call (e.g. "named top-2 pains", "agreed a concrete next step", "surfaced internal champion"). |
 
-**Language.** Brief framing in the user's working language (UA); everything spoken on the call —
+**Headings.** Print every section heading in words in the brief's language (e.g. «Коротко», «Про компанію»), never the snake_case field names. **Language.** Brief framing in the user's working language (UA); everything spoken on the call —
 starters, discovery questions — in the **prospect's language** (usually EN).
 
 ---
@@ -105,3 +105,27 @@ G6 Reply QA: positive reply → reply-objection-handler triage (worth it?) → m
 4. Triage intent with `reply-objection-handler` before prepping.
 5. One outcome goal per brief — state it in `exec_summary`.
 6. Spoken fields in the prospect's language; framing in UA.
+
+## Terms and plain-language output
+
+<!-- glossary:start terms=bant,decision-maker,day-to-day-owner,inferred,why-now,discovery-call,objection-handling,handoff -->
+Rules for every document a client or their team will read (review, roast, canvas, offer cards, instruction):
+
+1. **Open with «Словник цього документа»**: only the terms that actually appear in it, at most 10, each as «термін: що це простими словами». Like the definitions section of a contract.
+2. **No internal codes or letter scales in the text** (A/B/C, D L T E, BLEND numbers without words, Own/Shared/Generic, Z1.4, GATE 2.5, T1–T6). Write the meaning instead: «є цифра з клієнтом», not «A».
+3. **Use the plain form from the table below.** English stays only for tool names and for copy that ships in English (promises, hooks, subject lines). If the document is in another language, translate the plain form, never the internal term.
+4. **Do not score what cannot exist yet.** A block that depends on work not done (signal catalog, case studies, a previous step) gets «пропущено: спершу потрібно <що саме>», not a score.
+5. **Every section of a review opens with one concrete action** («до наступного дзвінка: …»), then at most five lines of why. No paragraph that only restates the framework.
+
+
+| Internal term (this skill) | Write for the reader | What it means |
+|---|---|---|
+| BANT (budget, authority, need, timeline), NO BANT | прямі питання про бюджет, ОПР і терміни | на першій зустрічі їх не ставимо; замість них питаємо про наслідки і ціну бездіяльності |
+| decision maker | ОПР (особа, що приймає рішення) | той, хто підписує: власник, операційний директор, керівник напряму |
+| day-to-day owner, champion | той, хто працюватиме з вами щодня | керівник проєкту, BIM-менеджер, керівник розробки; йому важливе інше, ніж ОПР |
+| [confirmed] / [inferred] | [підтверджено] / [припущення] | підтверджене має джерело; припущення перевіряємо питанням і не подаємо як факт |
+| why now, cost of inaction | ціна бездіяльності | що клієнт втрачає щомісяця, поки нічого не змінює |
+| discovery, discovery call | перший дзвінок з розбором потреби | розмова, де з'ясовуємо задачу, бюджет і хто вирішує, до будь-якої пропозиції. |
+| objection, objection handle | заперечення і відповідь на нього | причина, яку називає клієнт, щоб не рухатись далі, і заготовлена відповідь на неї |
+| handoff, G6 handoff | передача ліда продажам | момент, коли теплий лід переходить до того, хто веде дзвінок, разом з усім контекстом |
+<!-- glossary:end -->
