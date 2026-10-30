@@ -78,6 +78,36 @@ A ladder is also a build/launch ORDER, not just a structure. Sequence by: (a) wh
 - **Cold-facing rungs** (the entry rung you'd put in outbound) get the offer-factory card + test design (promise, hook, N, kill/keep). Upper rungs = **expand**, sold after delivery, NOT cold-tested.
 - Hand off: `offer-factory` to generate/test the entry-rung bets; `hypo-generator` for who+signal on those rungs.
 
+## Terms and plain-language output
+
+<!-- glossary:start terms=offer-ladder,rung,core-transformation,high-ticket,frontend,low-ticket,ascent-trigger,cannibalization,launch-sequence,entry-rung,expand,warm-audience,test-card,promise-formula,proof -->
+Rules for every document a client or their team will read (review, roast, canvas, offer cards, instruction):
+
+1. **Open with «Словник цього документа»**: only the terms that actually appear in it, at most 10, each as «термін — що це простими словами». Like the definitions section of a contract.
+2. **No internal codes or letter scales in the text** (A/B/C, D L T E, BLEND numbers without words, Own/Shared/Generic, Z1.4, GATE 2.5, T1–T6). Write the meaning instead: «є цифра з клієнтом», not «A».
+3. **Use the plain form from the table below.** English stays only for tool names and for copy that ships in English (promises, hooks, subject lines). If the document is in another language, translate the plain form, never the internal term.
+4. **Do not score what cannot exist yet.** A block that depends on work not done (signal catalog, case studies, a previous step) gets «пропущено: спершу потрібно <що саме>», not a score.
+5. **Every section of a review opens with one concrete action** («до наступного дзвінка: …»), then at most five lines of why. No paragraph that only restates the framework.
+
+| Internal term (this skill) | Write for the client | What it means |
+|---|---|---|
+| offer ladder, tiers | драбина оферів | кілька оферів від безкоштовного до найдорожчого, які ведуть того самого клієнта до одного результату; на кожній сходинці він платить і довіряє більше |
+| rung, tier (Free / Low / Mid / High) | сходинка драбини | один офер на драбині: безкоштовний, недорогий, середній або основний дорогий |
+| core transformation | головний результат | одна зміна для клієнта, яку дає кожна сходинка; різниться лише глибина вашої участі |
+| high-ticket, core contract | основний дорогий договір | найбільша робота, яку ви робите разом із клієнтом і за нього |
+| frontend, mid-tier | середня сходинка | клієнт робить сам, а ви супроводжуєте: група, розбори, контроль |
+| low-ticket | недорогий офер | готові інструкції й шаблони, які клієнт застосовує сам |
+| ascent trigger, transition CTA | момент переходу на наступну сходинку | думка клієнта, після якої він готовий платити більше, і заклик, що веде його далі |
+| cannibalization, down-sell | дешевший офер забирає продажі дорожчого | клієнт, готовий до великого договору, купує дешевшу сходинку, бо вона надто схожа або надто близька за ціною |
+| launch sequence | порядок запуску | що запускаємо в перший місяць, що в другий і чому саме так; наступну сходинку будуємо, лише коли попередня довела попит |
+| entry rung, cold-facing rung | вхідний офер для холодних листів | офер, з яким ідемо до людей, що вас не знають: невеликий за ціною й ризиком (платний пілот, діагностика, короткий спринт) |
+| expand, land-and-expand | допродаж після першої роботи | дорожчі сходинки не пропонуємо холодним людям, їх продаємо клієнту, який уже отримав результат на вхідному офері |
+| warm audience, distribution | тепла аудиторія | люди, які вас уже знають: підписники, база, колишні клієнти; новий офер без неї не запускаємо |
+| test card, offer-factory card | картка тесту оферу | одна сторінка на один варіант: обіцянка, кому пишемо, доказ, перший лист, скільки контактів і за яким результатом лишаємо чи прибираємо офер |
+| Promise Formulas | формула обіцянки | шаблон першого речення оферу: «результат без жертви», «з поганого стану в добрий за N днів» тощо |
+| proof, [TODO: need case] | доказ | кейс, цифра або відгук, що підтверджують обіцянку; якщо його немає, пишемо «потрібен кейс», а не вигадуємо |
+<!-- glossary:end -->
+
 ## Output format
 1. **Ladder table** (Tier | how result delivered | agency role | price band | proof/[TODO]).
 2. **ICP map across tiers** (which ICP each tier serves; note the narrow-at-top / wide-at-bottom shape).

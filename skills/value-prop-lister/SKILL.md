@@ -93,6 +93,30 @@ delivery) and the one who lives with the vendor every day (project lead, BIM man
 engineering manager). They care about different things. For each, pick the top three claims
 and say in one line why that person would care.
 
+## Terms and plain-language output
+
+<!-- glossary:start terms=big-promise,proof-strength,distinctiveness,value-buckets,table-stakes,buried-proof,decision-maker,day-to-day-owner,lead-with -->
+Rules for every document a client or their team will read (review, roast, canvas, offer cards, instruction):
+
+1. **Open with «Словник цього документа»**: only the terms that actually appear in it, at most 10, each as «термін — що це простими словами». Like the definitions section of a contract.
+2. **No internal codes or letter scales in the text** (A/B/C, D L T E, BLEND numbers without words, Own/Shared/Generic, Z1.4, GATE 2.5, T1–T6). Write the meaning instead: «є цифра з клієнтом», not «A».
+3. **Use the plain form from the table below.** English stays only for tool names and for copy that ships in English (promises, hooks, subject lines). If the document is in another language, translate the plain form, never the internal term.
+4. **Do not score what cannot exist yet.** A block that depends on work not done (signal catalog, case studies, a previous step) gets «пропущено: спершу потрібно <що саме>», not a score.
+5. **Every section of a review opens with one concrete action** («до наступного дзвінка: …»), then at most five lines of why. No paragraph that only restates the framework.
+
+| Internal term (this skill) | Write for the client | What it means |
+|---|---|---|
+| big promise, VP statement | головна обіцянка | одне речення про зміну, яку отримає клієнт; будуємо від його бажаного результату |
+| proof strength A / B / C | сила доказу: є цифра з клієнтом · є кейс без цифри · доказу немає | у документі пишемо одне з трьох значень словами, літер A/B/C не ставимо |
+| distinctiveness Own / Shared / Generic | чи кажуть це конкуренти: лише ви · один-два · усі | вести варто з того, чого не кажуть усі; у документі пишемо значення словами, без own/shared/generic |
+| buckets (Capacity, Speed, Quality and risk, Cost, Expertise, Management load, Continuity) | за що платять клієнти сервісних компаній | сім груп: більше роботи без найму, швидкість, якість і менше ризику, вартість, експертиза, менше контролю з боку клієнта, безперервність |
+| table stakes | обов'язковий мінімум | те, що є в усіх і без чого вас не розглядають; з цього лист не починають |
+| buried proof | схований доказ | сильний факт, який лежить у кейсі чи відгуку, але його немає на головних сторінках |
+| decision maker | ОПР (особа, що приймає рішення) | той, хто підписує: власник, операційний директор, керівник напряму |
+| day-to-day owner, champion | той, хто працюватиме з вами щодня | керівник проєкту, BIM-менеджер, керівник розробки; йому важливе інше, ніж ОПР |
+| Lead with / Support | з чого починати / що підкріплює | до трьох тверджень, з яких відкриваємо лист і сайт, і факти, що їх підтримують |
+<!-- glossary:end -->
+
 ## 6. Output
 
 ```
@@ -104,7 +128,7 @@ The main promise
 one, say so and give the closest candidate.]
 
 Inventory
-| # | Claim (buyer outcome) | Bucket | Proof | Distinct | Source |
+| # | Claim (buyer outcome) | Bucket | Proof (in words) | Do competitors say it (in words) | Source |
 |---|---|---|---|---|---|
 
 By person
@@ -112,12 +136,12 @@ Decision maker ([role]): 1. … 2. … 3. … (why each)
 Day-to-day owner ([role]): 1. … 2. … 3. … (why each)
 
 Ranking
-Lead with: [A/B + Own/Shared claims, max 3]
+Lead with: [claims backed by a number or a case that not every competitor says, max 3]
 Support: [claims that back the lead ones]
 Table stakes: [say only when asked; never open with these]
 
 Gaps
-Unproven: [C-grade claims; get proof or drop them]
+Unproven: [claims with no proof; get proof or drop them]
 Buried proof: [strong facts that sit in a case study or review but not in the main pages]
 Empty buckets: [and whether a competitor fills them]
 Contradictions: [pages or decks that promise different things]
