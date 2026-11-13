@@ -31,6 +31,22 @@ infer it, leave it out.
 
 ---
 
+## Required tools
+
+Install these before running the skill. None of them is strictly required, the skill also runs on pasted input, but without them the result gets noticeably worse: the company snapshot and prospect profile come from the thread alone, so more of the brief gets tagged [inferred].
+
+| Tool | Used for | Required? | Without it |
+|---|---|---|---|
+| CRM (Twenty or HubSpot) | pull the handoff context: thread, signal, hypothesis, any profiler card | Recommended | you paste the thread and context by hand |
+| Firecrawl (MCP) | read the company site and recent news for the snapshot and conversation starters | Recommended | the snapshot repeats what the thread says; starters get thin |
+| Apify (LinkedIn profile and posts actors) | read the prospect's role, tenure and recent posts for the profile and starters | Recommended | communication style and starters are tagged [inferred] |
+| AI Ark, Icypeas or MoltSets (MCP) | firmographics: headcount, locations, open roles | Recommended | company size is a guess |
+| HeyReach (MCP) | pull the full reply thread when the meeting was booked on LinkedIn | Recommended | you paste the thread from a screenshot |
+
+Alternatives: Apollo can stand in for these databases; Exa can stand in for Firecrawl; Sales Navigator can stand in for Apify; Instantly can stand in for HeyReach when the meeting was booked by email.
+
+---
+
 ## Inputs
 
 Pull from whatever exists, in priority order:

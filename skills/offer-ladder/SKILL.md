@@ -12,9 +12,18 @@ Build a vertical ascension ladder for an IT-agency client: a small set of tiers 
 
 **Language:** reasoning in Ukrainian; tier names, promises, CTAs in English.
 
-## What you need
-- **Client website URL** (required) — services + case studies.
-- Optional: known core promise, price points, constraints, what content/assets they already have.
+## Required tools
+
+Install these before running the skill. It still runs without the ones marked **Required**, but the result gets noticeably worse: tiers are built from the services you remember instead of every service line and every case with numbers on the site.
+
+| Tool | Used for | Required? | Without it |
+|---|---|---|---|
+| Firecrawl (MCP) | Phase 1: scraping all service lines, verticals and case studies from the client site | Required | you paste the site text by hand; buried cases are missed and more rungs end up `[TODO]` |
+| Google Drive connector | reading case studies and decks kept in Google Docs | Recommended | Docs content is pasted by hand (web fetch sees only the Docs page shell) |
+
+Alternatives: Apify (`rag-web-browser`) or the built-in WebFetch can stand in for Firecrawl.
+
+Inputs: **client website URL** (required) for services and case studies. Optional: known core promise, price points, constraints, what content/assets they already have.
 
 ## Process (9 phases)
 
