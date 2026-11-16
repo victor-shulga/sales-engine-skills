@@ -3,7 +3,7 @@
 Use these when the call runs in Ukrainian. One question at a time; let the prospect talk.
 
 ## S: Signal
-- Що змінилось за останні 3 місяці, що зробило це питанням зараз?
+- Що змінилось у клієнта і чому це питання саме зараз?
 - Що станеться, якщо це лишити як є до кінця року?
 
 ## C: Capability gap

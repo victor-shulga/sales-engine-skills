@@ -31,7 +31,7 @@ Ask in the prospect's language. Ukrainian versions of every question are in
 ### S: Signal (why now)
 What changed: a new project won, a deadline moved, someone left, a tool broke, a standard
 changed, a market opened. No "why now" means this is a research conversation, not a deal.
-- What changed in the last 3 months that made this a question now?
+- What changed for the client, and why is this a question right now?
 - What happens if this stays as it is until the end of the year?
 
 ### C: Capability gap (build vs buy), the axis specific to service companies
