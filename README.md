@@ -26,7 +26,7 @@ Restart your Claude Code session after install: skills load at session start.
 
 **Qualification, process, decks**
 
-- `scope-qualifier`: qualify a deal on SCOPE (Signal, Capability gap, Outcome at stake, Players and path, Engagement fit): verdict, CRM fields, what to find out next; maps onto MEDDPICC or BANT
+- `scope-qualifier`: qualify a deal on SCOPE (Signal, Capability gap, Outcome at stake, Players and budget, Engagement fit): verdict, CRM fields, what to find out next; maps onto MEDDPICC or BANT
 - `delivery-process-builder`: the buyer-facing delivery process from a founder interview: what the buyer gets week by week, exit points, their inputs, risk handling, then a site page, a call-deck slide and a proposal block
 - `slide-deck-builder`: a source document or notes turned into a .pptx deck (pitch, QBR or board, case study, onboarding) with an approved outline and a render check
 

@@ -3,7 +3,7 @@ name: scope-qualifier
 description: >-
   Qualifies a deal with SCOPE, a qualification framework built for B2B service companies:
   Signal (why now), Capability gap (why not in-house), Outcome at stake (in the buyer's numbers),
-  Players and path (who decides, budget, timeline, competition), Engagement fit and next move
+  Players and budget (who decides, who pays, how much, timeline, competition), Engagement fit and next move
   (verdict: pursue, nurture or disqualify). Produces the verdict, the CRM field set and the list
   of missing information for the next touch. Maps onto MEDDPICC or BANT fields when the CRM
   already runs one. Use when the user says "кваліфікуй лід", "qualify this
@@ -28,11 +28,24 @@ Ask in the prospect's language. Ukrainian versions of every question are in
 
 ## The five blocks
 
-### S: Signal (why now)
+BANT is built in, not missing. Every BANT field has its place, and SCOPE adds the two questions
+BANT never asks: why now, and why not in-house. Show the BANT tags next to the letters whenever
+SCOPE is explained (post, creative, deck, client document), or the reader will not see the budget question.
+
+| SCOPE | BANT inside | Where exactly |
+| :-- | :-- | :-- |
+| S: Signal | **T** Timeline | the deadline or event that makes it a question now |
+| C: Capability gap | none (SCOPE only) | their own team or a hire is the real competitor |
+| O: Outcome | **N** Need | the problem in their numbers, per month |
+| P: Players and budget | **A** Authority, **B** Budget | who decides, who pays, how much, budget anchored to O |
+| E: Engagement | **T** Timeline | start date and the next step with a date |
+
+### S: Signal (why now). BANT: Timeline
 What changed: a new project won, a deadline moved, someone left, a tool broke, a standard
 changed, a market opened. No "why now" means this is a research conversation, not a deal.
 - What changed for the client, and why is this a question right now?
 - What happens if this stays as it is until the end of the year?
+- By what date does this have to be solved, and what happens after it?
 
 ### C: Capability gap (build vs buy), the axis specific to service companies
 The competitor is rarely another agency. It is their own team, a future hire, or doing nothing.
@@ -42,7 +55,7 @@ The competitor is rarely another agency. It is their own team, a future hire, or
 
 A prospect who can do it in-house cheaply and calmly is a disqualify, and that is a fine outcome.
 
-### O: Outcome at stake (quantified)
+### O: Outcome at stake (quantified). BANT: Need
 This is what keeps you out of a price fight. Money, time or risk, in their numbers.
 - How is this measured on your side: money, hours, a missed deadline, a penalty risk?
 - What does it cost you per month right now?
@@ -51,15 +64,18 @@ This is what keeps you out of a price fight. Money, time or risk, in their numbe
 If the number cannot be reached, write `[unknown]` and make it the goal of the next touch.
 **Never estimate their impact for them and record it as fact.**
 
-### P: Players and path
+### P: Players and budget. BANT: Authority and Budget
+Budget is asked AFTER Outcome and anchored to it: a budget question without the cost of the
+problem turns into a rate negotiation.
 - Who else is in the decision besides you? Who says "no" last?
-- How does a decision like this usually go here, from "yes" to signature?
-- Is the budget already allocated, or does it still have to be defended?
+- Who pays, and how does a decision like this go here, from "yes" to signature?
+- If the problem costs [the amount from Outcome] a month, how much are you ready to invest to close it?
+- Is the budget already allocated, or does it still have to be defended? In front of whom?
 - Who else are you looking at or comparing with?
 
-### E: Engagement fit and next move
+### E: Engagement fit and next move. BANT: Timeline
 - Model: dedicated team, embedded (staff augmentation), or project. Which one fits what they described?
-- Scope, rough size, start window.
+- Scope, rough size, start date.
 - **Verdict: pursue, nurture or disqualify.** Always written, always with the reason.
 - **A mutual next step booked on the call**: a date, an owner, a deliverable. "I'll send some
   information and get back to you" does not count.
@@ -80,7 +96,7 @@ Rules for every document a client or their team will read (review, roast, canvas
 
 | Internal term (this skill) | Write for the reader | What it means |
 |---|---|---|
-| SCOPE (S Signal · C Capability gap · O Outcome at stake · P Players and path · E Engagement fit) | п'ять питань кваліфікації угоди | чому зараз, чому не своїми силами, що на кону в цифрах, хто вирішує і як, чи підходить формат і який наступний крок; у документі пишемо назви блоків словами, без літер |
+| SCOPE (S Signal · C Capability gap · O Outcome at stake · P Players and budget · E Engagement fit) | п'ять питань кваліфікації угоди | чому зараз, чому не своїми силами, що на кону в цифрах, хто вирішує, хто платить і скільки, чи підходить формат і який наступний крок; у документі пишемо назви блоків словами, без літер |
 | why now, cost of inaction | ціна бездіяльності | що клієнт втрачає щомісяця, поки нічого не змінює |
 | capability gap, build vs buy | чому не своїми силами | що заважає клієнту закрити задачу власною командою або наймом; головний конкурент сервісної компанії |
 | verdict: pursue / nurture / disqualify | рішення по угоді: ведемо · гріємо · закриваємо | одне з трьох рішень завжди з причиною; «гріємо» означає регулярні дотики без активного продажу |
@@ -126,11 +142,11 @@ Do not rebuild their CRM. Map SCOPE onto their fields and fill both:
 
 | SCOPE | MEDDPICC | BANT |
 | :-- | :-- | :-- |
-| S: Signal | Implicate the Pain (the trigger half) | none (BANT has no trigger, which is why it under-qualifies) |
+| S: Signal | Implicate the Pain (the trigger half) | Timeline (BANT has a date but no trigger, which is why it under-qualifies) |
 | C: Capability gap | Competition (including do-nothing and in-house) | none |
 | O: Outcome at stake | Metrics + Identify Pain | Need |
-| P: Players and path | Economic buyer, Decision criteria, Decision process, Champion, Paper process | Authority, Budget, Timeline |
-| E: Fit and next move | Champion + next step | none |
+| P: Players and budget | Economic buyer, Decision criteria, Decision process, Champion, Paper process | Authority, Budget, Timeline |
+| E: Fit and next move | Champion + next step | Timeline (start date) |
 
 MEDDPICC and BANT both miss two things that matter for a service business: the **capability
 gap** (why not in-house) and the **signal** (why now). Fill those regardless of which fields the
